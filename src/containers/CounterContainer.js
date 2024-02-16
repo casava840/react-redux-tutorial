@@ -3,9 +3,9 @@ import Counter from "../components/Counter";
 import { connect } from "react-redux";
 import { decrease, increase } from "../module/counter";
 
-const CounterContainer = ({number, increase, decrease}) => {
+const CounterContainer = ({number, callIncrease, callDecrease}) => {
     return (
-    <Counter number={number} onIncrease={increase} onDecrease={decrease}/>
+    <Counter number={number} onIncrease={callIncrease} onDecrease={callDecrease}/>
     );
 };
 
@@ -15,11 +15,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    // 임시함수
-    increase: () => {
+    //여기 정의된 함수는 connect()를 통해 결합되어 CounterContainer에 인자로 들어간다.
+    callIncrease: () => {
         dispatch(increase());
     },
-    decrease: () => {
+    callDecrease: () => {
         dispatch(decrease());
     },
 });

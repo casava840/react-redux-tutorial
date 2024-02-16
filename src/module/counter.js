@@ -4,8 +4,8 @@ const DECREASE = 'counter/DECREASE';
 
 //export 키워드는 외부에서 해당 객체를 사용할 수 있게 해줌
 //액션 객체 생성 함수
-export const increase = () => {{ type: INCREASE }};
-export const decrease = () => {{ type: DECREASE }};
+export const increase = () => ({ type: INCREASE });
+export const decrease = () => ({ type: DECREASE });
 
 const initialState = {
     number: 0
